@@ -1,0 +1,65 @@
+<div
+  class="float-left w-full px-[30px] lg:pl-[270px] main-content mt-5 bg-[#161A1E] overflow-hidden"
+>
+  <div
+    class="rounded-lg pt-4 w-12/12 px-3 bg-[#1E2026] mx-auto pb-3 !md:px-5 relative top-5 mb-6"
+  >
+    <div class="flex flex-col">
+      <div class="page-title-container">
+        <span class="page-title">Releases</span>
+      </div>
+
+      <div class="box">
+        <div
+          class="w-full overflow-hidden rounded-lg shadow-xs border-gray-500"
+        >
+          <div
+            class="w-full overflow-x-auto"
+            *ngIf="releasesList$.length > 0; else noRecords"
+          >
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-left w-8">#</th>
+                  <th class="text-center">Original Amount</th>
+                  <th class="text-center">Penalty</th>
+                  <th class="text-center">Profit</th>
+                  <th class="text-center">Total Amount</th>
+                  <th class="text-center">Status</th>
+                  <th class="text-center">Request Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="cursor-pointer"
+                  app-release-table-row
+                  *ngFor="let release of releasesList$; index as i"
+                  [rowNumber]="getRowNumber(i)"
+                  [item]="release"
+                  (click)="handleOpenDialog(release)"
+                ></tr>
+              </tbody>
+              <!-- <tfoot>
+                <tr>
+                  <td colSpan="7" class="pagination-cell">
+                    <Pagination
+                      totalPages={totalPages}
+                      onChange={handlePageChange}
+                    />
+                  </td>
+                </tr>
+              </tfoot> -->
+            </table>
+          </div>
+        </div>
+        <ng-template #noRecords>
+          <span class="flex items-center justify-center h-40">
+            No Records!
+          </span>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-release-dialog [selectedRelease]="selectedRelease"></app-release-dialog>

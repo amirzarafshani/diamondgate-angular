@@ -1,0 +1,141 @@
+<a class="btn-primary text-center !w-28 cursor-pointer" (click)="showDialog()">
+  Deposit</a
+>
+<p-dialog
+  header="Deposit"
+  [(visible)]="display"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="true"
+  [resizable]="false"
+  [maximizable]="true"
+  [dismissableMask]="true"
+>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="w-full mb-4">
+      <div class="my-4">
+        <label htmlFor="amount" class="block text-sm font-medium text-white">
+          Wallet Address (TRC20)
+        </label>
+        <div class="mt-1 relative rounded-md shadow-sm border border-gray-200">
+          <span
+            class="block w-full py-3 pl-3 pr-3 sm:text-sm rounded-md focus:outline-none"
+          >
+            {{ DEPOSIT_WALLET_ADDRESS }}
+          </span>
+        </div>
+      </div>
+      <div class="my-4">
+        <label htmlFor="amount" class="block text-sm font-medium text-white">
+          Amount
+        </label>
+        <div
+          class="mt-1 relative rounded-md shadow-sm border border-gray-200"
+          [class.border-red-500]="
+            form.get('amount')?.invalid &&
+            (form.get('amount')?.dirty || form.get('amount')?.touched)
+          "
+        >
+          <input
+            type="text"
+            name="amount"
+            class="input"
+            placeholder="Amount"
+            formControlName="amount"
+          />
+        </div>
+      </div>
+      <div class="my-4">
+        <label
+          htmlFor="transaction_id"
+          class="block text-sm font-medium text-white"
+        >
+          Transaction Id
+        </label>
+        <div
+          class="mt-1 relative rounded-md shadow-sm border border-gray-200"
+          [class.border-red-500]="
+            form.get('transaction_id')?.invalid &&
+            (form.get('transaction_id')?.dirty ||
+              form.get('transaction_id')?.touched)
+          "
+        >
+          <input
+            type="text"
+            name="transaction_id"
+            class="block w-full py-3 pl-3 pr-3 sm:text-sm rounded-md focus:outline-none"
+            placeholder="Transaction Id"
+            formControlName="transaction_id"
+          />
+        </div>
+      </div>
+      <div class="my-4">
+        <label htmlFor="image" className="block text-sm font-medium text-white">
+          Transaction Screenshot
+        </label>
+        <input
+          class="form-control block border-gray-200 w-full px-3 py-1.5 text-base font-normal text-white bg-white bg-clip-padding border border-solid shadow-sm rounded transition ease-in-out m-0 focus:text-white focus:bg-white focus:border-blue-600 focus:outline-none"
+          [class.border-red-500]="
+            form.get('image')?.invalid &&
+            (form.get('image')?.dirty || form.get('image')?.touched)
+          "
+          formControlName="image"
+          (change)="onFileChange($event)"
+          type="file"
+          id="image"
+          accept="image/png, image/jpg, image/jpeg, image/gif"
+        />
+        <p class="mt-1 text-sm text-gray-500" id="file_input_help">
+          JPG, PNG or GIF
+        </p>
+      </div>
+      <div class="my-4">
+        <label htmlFor="plan_id" class="block text-sm font-medium text-white">
+          Select Plan
+        </label>
+
+        <app-plans-select
+          (onChange)="onPlanChange($event)"
+          [selected]="form.value.plan_id"
+        ></app-plans-select>
+      </div>
+
+      <button
+        type="submit"
+        class="btn-primary w-full !py-2 !px-20"
+        [class.submitting]="isSubmitting"
+        [disabled]="isSubmitting"
+      >
+        <ng-container *ngIf="!isSubmitting; else spinner">
+          Submit
+        </ng-container>
+      </button>
+    </div>
+  </form>
+  <!-- <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template> -->
+</p-dialog>
+
+<ng-template #spinner>
+  <svg
+    class="w-5 h-5 mr-3 -ml-1 text-black animate-spin"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      class="opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      stroke-width="4"
+    ></circle>
+    <path
+      class="opacity-75"
+      fill="currentColor"
+      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+    ></path>
+  </svg>
+</ng-template>

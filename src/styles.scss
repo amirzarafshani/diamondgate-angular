@@ -1,0 +1,63 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./assets/fonts/_fonts.css";
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Exo&family=Playfair+Display&display=swap");
+
+:root {
+  --primary: #eaba4c;
+  --primary-light: #f1c65f;
+  --primary-dark: #d4a944;
+  --secondary: #1e1e2d;
+  --secondary-light: #1e1e2d;
+}
+
+input:focus {
+  border: 0.5px solid #f0b90b !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Exo", "plex" !important;
+}
+
+.bg-calculator {
+  // background-image: url("./assets/images/bg-7.jpg");
+}
+
+.footer {
+  border-top: 2px solid rgba(204, 163, 84, 0.5);
+  position: relative;
+}
+
+.bg_img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.footer__top {
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+.social-link-list {
+  margin: -5px;
+}
+
+.footer-short-menu {
+  margin: -5px -10px;
+}
+
+.footer-short-menu li a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bg-footer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    url("./assets/images/bg-7.jpg");
+}

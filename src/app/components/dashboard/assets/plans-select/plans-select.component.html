@@ -1,0 +1,22 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <a
+    *ngFor="let plan of plansList$"
+    class="flex flex-col p-4 rounded-lg text-black shadow-md bg-white cursor-pointer border-[3px] border-white"
+    [class.selected-plan]="this.selected === plan.id"
+    (click)="onSelectPlan(plan.id)"
+  >
+    <h6 class="border-b mb-4 font-bold !text-xl">Plan: {{ plan.name }}</h6>
+    <div class="flex gap-2">
+      <span>Days:</span>
+      <span class="font-bold">{{ plan.days }}</span>
+    </div>
+    <div class="flex gap-2">
+      <span>Profit:</span>
+      <span class="font-bold">{{ plan.profit }}</span>
+    </div>
+    <div class="flex gap-2">
+      <span>Penalty:</span>
+      <span class="font-bold">{{ plan.penalty }}</span>
+    </div>
+  </a>
+</div>

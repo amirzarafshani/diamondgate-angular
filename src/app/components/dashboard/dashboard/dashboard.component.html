@@ -1,0 +1,133 @@
+<div
+  class="float-left w-full px-[30px] lg:pl-[270px] main-content mt-5 bg-[#161A1E] overflow-hidden"
+>
+  <div
+    class="rounded-lg pt-4 w-12/12 px-3 bg-[#1E2026] mx-auto pb-3 !md:px-5 relative top-5 mb-6"
+  >
+    <app-assets-chart
+      *ngIf="assetsChartData"
+      [assetsChartData]="assetsChartData"
+    ></app-assets-chart>
+  </div>
+
+  <!-- <h3 class="mt-6 font-medium pr-2 text-white">لیست اعلان ها</h3>
+  <div
+    class="bg-[#1E2026] rounded-[15px] mt-5 pt-6 pb-3 px-4 float-left w-full mb-5"
+  >
+    <div class="relative overflow-x-auto mb-4">
+      <table
+        class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mb-5"
+      >
+        <thead class="uppercase whitespace-nowrap mb-4">
+          <tr>
+            <th
+              scope="col"
+              class="px-5 pt-2 pb-5 text-[#afb5c1] text-xs text-left"
+            >
+              موضوع اعلان
+            </th>
+            <th
+              scope="col"
+              class="px-5 pt-2 pb-5 text-[#afb5c1] text-xs text-center w-48"
+            >
+              تاریخ
+            </th>
+            <th
+              scope="col"
+              class="px-5 pt-2 pb-5 text-[#afb5c1] text-xs text-center w-44"
+            >
+              ساعت
+            </th>
+            <th
+              scope="col"
+              class="px-5 pt-2 pb-5 text-[#afb5c1] text-xs text-center w-56"
+            >
+              دسته
+            </th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">
+              <div class="flex flex-col justify-center mt-5">
+                <div class="float-left w-full flex justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="145.933"
+                    height="122.14"
+                  >
+                    <g data-name="Group 5995">
+                      <g data-name="vuesax/bold/document-text">
+                        <path
+                          d="M65.847 17.66a2.716 2.716 0 00-4.022 2.972l3.755 14.007a11.328 11.328 0 0013.913 7.76c3.825-.982 9.122-2.403 13.658-3.619a2.621 2.621 0 00.736-4.8c-7.343-4.277-20.51-11.97-28.04-16.32z"
+                          fill="#b4b4b4"
+                        ></path>
+                        <path
+                          data-name="Vector"
+                          d="M93.305 44.634L81.7 47.745a17.895 17.895 0 01-21.887-12.633l-3.11-11.6a4.168 4.168 0 00-5.092-2.938l-17.019 4.563C22.23 28.452 14.387 39.16 18.23 53.49l9.535 35.564c3.844 14.335 15.99 19.678 28.353 16.364l31.55-8.46c12.364-3.314 20.205-14.022 16.363-28.352l-5.64-21.033a4.168 4.168 0 00-5.085-2.94zM65.313 84.666l-16.059 4.306a3.117 3.117 0 01-1.614-6.021L63.7 78.645a3.117 3.117 0 011.614 6.021zm3.724-18.208L44.95 72.916a3.117 3.117 0 01-1.615-6.021l24.085-6.458a3.117 3.117 0 011.614 6.022z"
+                          fill="#b4b4b4"
+                        ></path>
+                        <path
+                          data-name="Line 172"
+                          fill="none"
+                          stroke="#fff"
+                          stroke-linecap="round"
+                          stroke-width="7.000839999999999"
+                          d="M42.104 70.203l30.912-8.288"
+                        ></path>
+                        <path
+                          data-name="Line 173"
+                          fill="none"
+                          stroke="#fff"
+                          stroke-linecap="round"
+                          stroke-width="7.000839999999999"
+                          d="M46.248 86.66l22.218-5.958"
+                        ></path>
+                      </g>
+                      <g data-name="vuesax/bold/document-text">
+                        <g data-name="document-text" fill="#dedede">
+                          <path
+                            data-name="Vector"
+                            d="M111.861 31.597a2.716 2.716 0 00-4.654 1.828v14.5a11.327 11.327 0 0011.427 11.097c3.948.042 9.432.042 14.128.042a2.621 2.621 0 001.953-4.446c-5.984-6.031-16.708-16.871-22.854-23.021z"
+                          ></path>
+                          <path
+                            data-name="Vector"
+                            d="M131.395 64.757h-12.014a17.893 17.893 0 01-17.867-17.868V34.88a4.168 4.168 0 00-4.156-4.155H79.74c-12.798 0-23.145 8.311-23.145 23.145v36.816c0 14.839 10.347 23.145 23.145 23.145h32.66c12.8 0 23.145-8.311 23.145-23.145V68.912a4.168 4.168 0 00-4.15-4.155zm-37.4 31.414H77.371a3.116 3.116 0 010-6.233h16.624a3.116 3.116 0 010 6.233zm8.311-16.621H77.371a3.116 3.116 0 010-6.233h24.932a3.116 3.116 0 010 6.233z"
+                          ></path>
+                        </g>
+                      </g>
+                      <path
+                        data-name="Line 170"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-width="7"
+                        d="M73.57 76.808h32"
+                      ></path>
+                      <path
+                        data-name="Line 171"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-width="7"
+                        d="M73.57 92.808h23"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="w-full">
+                  <p
+                    class="text-[#949597] text-base font-semibold w-full text-center my-4"
+                  >
+                    اطلاعاتی برای نمایش وجود ندارد
+                  </p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div> -->
+</div>

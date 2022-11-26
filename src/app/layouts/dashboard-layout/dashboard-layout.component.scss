@@ -1,0 +1,124 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+#main-wrapper {
+  background: #161a1e;
+  min-height: 100vh;
+}
+.mobile-toggle-menu {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.sidebar-submenu {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.mat-menu-panel {
+  background: #1e2026;
+  width: 100%;
+}
+.table {
+  @apply w-full whitespace-nowrap;
+  thead {
+    tr {
+      @apply text-xs font-normal tracking-wide text-[#afb5c1] uppercase border-b border-[#474d57];
+      th {
+        @apply px-4 py-3 md:text-base text-xs font-normal;
+      }
+    }
+  }
+  tbody {
+    @apply divide-y divide-[#474d57];
+    tr {
+      @apply text-white;
+      td {
+        @apply px-4 py-3;
+      }
+    }
+  }
+}
+
+.page-title-container {
+  @apply flex items-center mb-5 gap-5;
+  .page-title {
+    @apply font-semibold text-2xl;
+  }
+  a {
+    @apply ml-3 cursor-pointer text-sm;
+  }
+}
+.btn-primary {
+  @apply disabled:bg-gray-300 disabled:cursor-default overflow-hidden relative outline-none focus:outline-none bg-primary shadow-lg rounded-md px-1 md:px-5 w-full py-0 md:py-2 cursor-pointer m-0.5 hover:bg-primary-dark whitespace-nowrap text-sm md:text-base;
+  &.submitting {
+    @apply text-gray-400 hover:bg-primary cursor-default;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0)
+      );
+      animation: shimmer 3s infinite;
+      content: "";
+    }
+  }
+}
+
+.nav-item {
+  @apply border-[#1E2026] border-l-2 flex h-12 hover:text-[#D4AF37] items-center px-1.5 text-[#eaecef];
+  &.active {
+    @apply border-[#D4AF37] text-[#D4AF37];
+  }
+}
+
+p-dialog {
+  .p-dialog-content,
+  .p-dialog-header {
+    background-color: #363a45 !important;
+  }
+  .p-dialog-mask {
+    background-color: rgba(0, 0, 0, 0.71) !important;
+  }
+}
+
+.input::placeholder {
+}
+.input {
+  background-color: #1e2026;
+  outline: none !important;
+  @apply text-sm text-left h-12 placeholder-gray-500 pl-4 pr-5 rounded-[5px] border border-[#474d57] w-full py-2 transition-all duration-300;
+  &::placeholder {
+    @apply sm:text-xs;
+  }
+  &:focus {
+    box-shadow: 0px 0px 0px 2px #bdcfff73;
+  }
+
+  &.has-error {
+    @apply border-[#ff0000] border;
+  }
+  &::placeholder {
+    font-size: 1rem;
+    @apply text-[#717780];
+  }
+}

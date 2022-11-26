@@ -1,0 +1,13 @@
+<!-- Start Logo -->
+<section class="py-20 relative bg-1">
+  <div class="container">
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <app-pair
+        *ngFor="let coinInfo of coinsList; index as i"
+        [coinInfo]="coinInfo"
+        [index]="i"
+      ></app-pair>
+    </div>
+  </div>
+</section>
+<!-- End Logo -->

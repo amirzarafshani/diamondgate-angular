@@ -1,0 +1,98 @@
+<p-dialog
+  header="Release"
+  [(visible)]="display"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="true"
+  [resizable]="false"
+  [maximizable]="true"
+  [dismissableMask]="true"
+>
+  <div class="flex flex-col" *ngIf="selectedAsset">
+    <div class="font-bold flex justify-between border-b pb-5 mb-5">
+      <span>Plan: {{ selectedAsset.plan?.name }}</span>
+      <span> Days: {{ selectedAsset.plan?.days }}</span>
+      <span> Amount: {{ selectedAsset.amount }}</span>
+    </div>
+    <div class="flex">
+      <div class="w-1/2">
+        <div class="flex flex-col gap-5">
+          <span>Profit: {{ selectedAsset.profit_rate }}</span>
+          <span>Elapsed: {{ selectedAsset.elapsed }}</span>
+          <div class="divide-y-2 divide-gray-400"></div>
+          <span>Total Profit: {{ selectedAsset.calculated_profit }}</span>
+        </div>
+      </div>
+      <div class="w-1/2">
+        <div class="flex flex-col gap-5">
+          <span>Penalty: {{ selectedAsset.plan?.penalty }}</span>
+          <span>Remaining: {{ selectedAsset.remaining }}</span>
+          <div class="divide-y-2 divide-blue-200"></div>
+          <span>Total Penalty: {{ selectedAsset.calculated_penalty }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="border-b border-gray-200 pb-5 my-5"></div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="w-full mb-4">
+        <div class="my-4">
+          <label htmlFor="address" class="block text-sm font-medium text-white">
+            Wallet Address
+          </label>
+          <div
+            class="mt-1 relative rounded-md shadow-sm border border-gray-200"
+            [class.border-red-500]="
+              form.get('address')?.invalid &&
+              (form.get('address')?.dirty || form.get('address')?.touched)
+            "
+          >
+            <input
+              type="text"
+              name="address"
+              class="block w-full py-3 pl-3 pr-3 sm:text-sm rounded-md focus:outline-none"
+              placeholder="Amount"
+              formControlName="address"
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn-primary w-full !py-2 !px-20"
+          [class.submitting]="isSubmitting"
+          [disabled]="isSubmitting"
+        >
+          <ng-container *ngIf="!isSubmitting; else spinner">
+            Withdraw
+          </ng-container>
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template> -->
+</p-dialog>
+
+<ng-template #spinner>
+  <svg
+    class="w-5 h-5 mr-3 -ml-1 text-black animate-spin"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      class="opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      stroke-width="4"
+    ></circle>
+    <path
+      class="opacity-75"
+      fill="currentColor"
+      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+    ></path>
+  </svg>
+</ng-template>

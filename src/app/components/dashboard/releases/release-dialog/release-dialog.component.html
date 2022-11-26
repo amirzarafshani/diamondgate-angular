@@ -1,0 +1,35 @@
+<p-dialog
+  [(visible)]="display"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="true"
+  [resizable]="false"
+  [maximizable]="true"
+  [dismissableMask]="true"
+>
+  <div class="flex flex-col">
+    <div class="font-bold flex justify-between border-b pb-5 mb-5">
+      <span>Plan: {{ selectedRelease.plan.name }}</span>
+      <span> Days: {{ selectedRelease.plan.days }}</span>
+      <span> Amount: {{ selectedRelease.current_amount }}</span>
+    </div>
+    <div class="flex">
+      <div class="w-1/2">
+        <div class="flex flex-col gap-5">
+          <span>Profit: {{ selectedRelease.plan.profit }}</span>
+          <span>Elapsed: {{ selectedRelease.elapsed }}</span>
+          <div class="divide-y-2 divide-gray-400"></div>
+          <span>Total Profit: {{ selectedRelease.profit }}</span>
+        </div>
+      </div>
+      <div class="w-1/2">
+        <div class="flex flex-col gap-5">
+          <span>Penalty: {{ selectedRelease.plan.penalty }}</span>
+          <span>Remaining: {{ selectedRelease.remaining }}</span>
+          <div class="divide-y-2 divide-blue-200"></div>
+          <span>Total Penalty: {{ selectedRelease.penalty }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</p-dialog>

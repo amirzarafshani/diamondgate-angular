@@ -1,0 +1,20 @@
+<div class="absolute top-0 right-0 w-full bottom-0 bg-[#161A1E] z-0"></div>
+<div class="bg-[#161a1e] px-4 w-full lg:px-0 py-24">
+  <div
+    class="grid grid-cols-2 lg:flex-row items-stretch sm:mx-2 mt-12 md:mx-7 xl:mx-auto rounded-[15px] bg-[#1E2026] overflow-hidden relative sm:px-6 px-2 xl:w-[1100px] z-10 2xl:w-[1150px] py-6 !min-h-[650px]"
+  >
+    <div class="md:col-span-1 hidden md:!block relative">
+      <div
+        class="flex items-center rounded-[15px] bg-grey-light h-full justify-center bg-login"
+      >
+        <img class="select-none" src="assets/images/slide1.png" />
+      </div>
+    </div>
+    <div
+      class="md:col-span-1 col-span-2 lg:px-16 lg:pl-20 sm:px-4 px-2 h-full flex items-center justify-center relative"
+    >
+      <app-login *ngIf="this.router.url.includes('login')"></app-login>
+      <app-register *ngIf="this.router.url.includes('register')"></app-register>
+    </div>
+  </div>
+</div>

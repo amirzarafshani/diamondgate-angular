@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "plex";
+  src: url(plex/plex_medium.eot);
+  src: url(plex/plex_medium.eot?#iefix) format("embedded-opentype"),
+    url(plex/plex_medium.woff) format("woff"),
+    url(plex/plex_medium.ttf) format("truetype");
+  font-weight: normal !important;
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}

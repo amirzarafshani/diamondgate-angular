@@ -1,0 +1,32 @@
+.auth-submit-btn {
+  @apply flex items-center justify-center h-12 text-sm text-white rounded-[5px] hover:text-white py-2.5 w-full transition duration-150 ease-in;
+  &.loading {
+    @apply cursor-default;
+  }
+}
+
+.auth-input {
+  background-color: #1e2026;
+
+  font-family: "anjoman" important;
+  outline: none important;
+  @apply text-sm text-left h-12 placeholder-gray-500 pl-4 pr-5 rounded-[5px] border border-[#474d57] w-full py-2 transition-all duration-300;
+  &::placeholder {
+    @apply sm:text-xs;
+  }
+  &:focus {
+    box-shadow: 0px 0px 0px 2px #bdcfff73;
+  }
+
+  &.has-error {
+    @apply border-[#ff0000] border;
+  }
+  &::placeholder {
+    font-family: "anjoman" important;
+    font-size: 1rem;
+    @apply text-[#717780];
+  }
+  &:hover {
+    border: 0.5px solid #f0b90b !important;
+  }
+}

@@ -1,0 +1,121 @@
+<form
+  class="w-full flex flex-col my-5"
+  autoComplete="off"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="text-white text-base text-right">
+    <h2 class="text-lg font-bold text-center w-full !text-[#eaecef]">
+      DIAMOND GATE
+      <p
+        class="text-center w-full text-base mt-3 font-normal pb-10 text-[#afb5c1]"
+      >
+        LOGIN
+      </p>
+    </h2>
+  </div>
+  <div class="flex flex-col mb-6">
+    <div class="relative">
+      <input
+        class="auth-input mt-9 text-left ltr text-[#eaecef]"
+        [class.has-error]="
+          form.get('email')?.invalid &&
+          (form.get('email')?.dirty || form.get('email')?.touched)
+        "
+        id="email"
+        name="email"
+        type="text"
+        placeholder="Email Or Mobile"
+        formControlName="email"
+      />
+    </div>
+  </div>
+  <div class="flex flex-col justify-between mb-5 relative">
+    <div class="relative">
+      <input
+        class="auth-input text-left ltr text-[#eaecef]"
+        [class.has-error]="
+          form.get('password')?.invalid &&
+          (form.get('password')?.dirty || form.get('password')?.touched)
+        "
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </div>
+  </div>
+
+  <!-- <div class="flex flex-wrap -mx-3 mb-3">
+  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+    <label
+    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+    htmlFor="captcha"
+    >
+    captcha
+      </label>
+      <input
+      class="auth-input-2 mt-9 text-left ltr text-[#eaecef]"
+      id="captcha"
+      name="captcha"
+      type="text"
+      placeholder=""
+      />
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label
+      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+      htmlFor="captcha"
+      >
+      &nbsp;
+    </label>
+  </div>
+</div> -->
+
+  <div class="w-full sm:flex gap-2">
+    <div class="w-full">
+      <button
+        type="submit"
+        class="auth-submit-btn mt-5 !text-[14px] !text-[#161A1E] !w-full !bg-[#F0B90B] hover:!bg-[#D4AF37]"
+      >
+        <ng-container *ngIf="!isSubmitting; else spinner">
+          Sign in
+        </ng-container>
+      </button>
+    </div>
+  </div>
+</form>
+<div class="flex mt-3 justify-start">
+  <span class="!text-[#eaecef] text-sm font-normal">
+    Don't have an account yet?
+  </span>
+  <a
+    class="ml-3 font-medium text-sm text-[#F0B90B] hover:underline"
+    [routerLink]="['/register']"
+  >
+    Register now
+  </a>
+</div>
+<ng-template #spinner>
+  <svg
+    class="w-5 h-5 mr-3 -ml-1 text-black animate-spin"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      class="opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      stroke-width="4"
+    ></circle>
+    <path
+      class="opacity-75"
+      fill="currentColor"
+      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+    ></path>
+  </svg>
+</ng-template>

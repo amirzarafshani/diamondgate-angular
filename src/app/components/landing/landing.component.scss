@@ -1,0 +1,183 @@
+.in-offset-bottom-40 {
+  margin-bottom: -40px;
+}
+.uk-section-primary {
+  background: #c99c3b;
+}
+@media (min-width: 960px) {
+  .uk-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+.uk-section {
+  display: flow-root;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.uk-section-primary:not(.uk-preserve-color) {
+  color: rgba(255, 255, 255, 0.7);
+}
+.uk-section > :last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 960px) {
+  .uk-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (min-width: 640px) {
+  .uk-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.uk-container {
+  display: flow-root;
+  box-sizing: content-box;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.uk-container > :last-child {
+  margin-bottom: 0;
+}
+
+.uk-position-relative {
+  position: relative !important;
+}
+.uk-flex-middle {
+  align-items: center;
+}
+.uk-flex {
+  display: flex;
+}
+@media (min-width: 1200px) {
+  .uk-grid {
+    margin-left: -40px;
+  }
+}
+.uk-grid {
+  margin-left: -30px;
+}
+.uk-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.in-offset-bottom-40 {
+  margin-bottom: -40px;
+}
+.uk-position-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+[class*="uk-position-bottom"],
+[class*="uk-position-center"],
+[class*="uk-position-left"],
+[class*="uk-position-right"],
+[class*="uk-position-top"] {
+  position: absolute !important;
+  max-width: 100%;
+}
+@media (min-width: 1200px) {
+  .uk-grid > * {
+    padding-left: 40px;
+  }
+}
+.uk-text-center {
+  text-align: center !important;
+}
+@media (min-width: 960px) {
+  .uk-width-auto\@m {
+    width: auto;
+  }
+}
+[class*="uk-width"] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+@media (min-width: 1200px) {
+  .uk-grid > * {
+    padding-left: 40px;
+  }
+}
+.uk-grid > * {
+  padding-left: 30px;
+}
+.uk-grid > * {
+  margin: 0;
+}
+
+@media (min-width: 960px) {
+  .uk-width-3-5\@m {
+    width: 60%;
+  }
+}
+[class*="uk-width"] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .uk-grid > * {
+    padding-left: 40px;
+  }
+}
+.uk-grid > * {
+  padding-left: 30px;
+}
+.uk-grid > * {
+  margin: 0;
+}
+.in-wave-10 h2,
+.in-wave-10 p {
+  position: relative;
+  z-index: 1;
+}
+
+.uk-margin-remove-bottom {
+  margin-bottom: 0 !important;
+}
+@media (min-width: 960px) {
+  .uk-h2,
+  h2 {
+    font-size: 2rem;
+  }
+}
+.uk-h2,
+h2 {
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+.uk-h1,
+.uk-h2,
+.uk-h3,
+.uk-h4,
+.uk-h5,
+.uk-h6,
+.uk-heading-2xlarge,
+.uk-heading-large,
+.uk-heading-medium,
+.uk-heading-small,
+.uk-heading-xlarge,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 20px 0;
+  font-family: Rubik, sans-serif;
+  font-weight: 500;
+  color: #333;
+  text-transform: none;
+}
