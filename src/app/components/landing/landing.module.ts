@@ -8,6 +8,7 @@ import { StepsComponent } from './steps/steps.component';
 import { CryptoPriceTrackerComponent } from './crypto-price-tracker/crypto-price-tracker.component';
 import { PairComponent } from './crypto-price-tracker/pair/pair.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { AppsComponent } from './apps/apps.component';
 import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SwiperModule } from 'swiper/angular';
     CryptoPriceTrackerComponent,
     PairComponent,
     CarouselComponent,
+    AppsComponent,
   ],
   imports: [CommonModule, LandingRoutingModule, SwiperModule],
 })

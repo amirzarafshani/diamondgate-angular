@@ -1,0 +1,22 @@
+.bg-8 {
+  background-image: url("../../../../assets/images/bg-8.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 35px 100px;
+  box-shadow: 0 3px 15px rgb(204 163 84 / 50%);
+}
+.cta-wrapper {
+  padding: 35px 100px;
+  box-shadow: 0 3px 15px rgb(204 163 84 / 50%);
+}
+.bg_img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.app-link:hover {
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgb(204 163 84 / 50%) !important;
+  transform: translateY(-3px);
+}
