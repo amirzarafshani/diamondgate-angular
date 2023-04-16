@@ -21,16 +21,16 @@ const routes: Routes = [
             (m) => m.LandingModule
           ),
       },
-      {
-        path: 'login',
-        loadChildren: () =>
-          import('./components/auth/auth.module').then((m) => m.AuthModule),
-      },
-      {
-        path: 'register',
-        loadChildren: () =>
-          import('./components/auth/auth.module').then((m) => m.AuthModule),
-      },
+      // {
+      //   path: 'login',
+      //   loadChildren: () =>
+      //     import('./components/auth/auth.module').then((m) => m.AuthModule),
+      // },
+      // {
+      //   path: 'register',
+      //   loadChildren: () =>
+      //     import('./components/auth/auth.module').then((m) => m.AuthModule),
+      // },
     ],
   },
   // Dashboard Routes
